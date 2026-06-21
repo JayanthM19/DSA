@@ -5,4 +5,4 @@ class Solution(object):
         :rtype: int
         """
         
-        return abs(moves.count('R')-moves.count('L'))+abs(moves.count('U')-moves.count('D'))+moves.count('_')©leetcode
+        return abs(moves.count('R')-moves.count('L'))+abs(moves.count('U')-moves.count('D'))+moves.count('_')
