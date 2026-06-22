@@ -1,0 +1,429 @@
+DP Pattern Recognition
+
+When you see:
+
+Partition array into two groups
+Minimize difference
+
+Immediately think:
+
+Subset Sum
+Target = total//2
+Find closest achievable sum
+Answer = total - 2*sum
+
+This is the same pattern as:
+
+Partition Equal Subset Sum
+Minimum Subset Sum Difference
+Last Stone Weight II
+
+all are subset-sum based problems.
+
+
+and 
+
+Quick Cheat Sheet
+DP asks for	Transition	Impossible value
+Minimum	        min()	    inf
+Maximum	        max()	    0 or -inf
+Count ways	        +	    0
+Possible?	        or	    False
+
+
+
+----------------------------------------------
+
+Step 1: Ignore the story
+
+Never focus on:
+
+coins
+stones
+jumps
+robots
+houses
+strings
+
+Instead ask:
+
+What is the question asking me to optimize?
+Pattern A: Can I do it?
+
+Keywords:
+
+Can I?
+Is it possible?
+Return true or false
+Can reach?
+Can partition?
+
+Examples:
+
+Jump Game I
+Subset Sum
+Partition Equal Subset Sum
+Word Break
+
+State usually stores:
+
+True / False
+
+Recurrence usually uses:
+
+take OR nottake
+
+Example:
+
+dp[i][sum] = take or nottake
+Pattern B: How many ways?
+
+Keywords:
+
+Count
+Number of ways
+How many subsets
+How many paths
+Find total ways
+
+Examples:
+
+Target Sum
+Coin Change II
+Distinct Subsequences
+Unique Paths
+
+State stores:
+
+count
+
+Recurrence:
+
+take + nottake
+
+Because counts add.
+
+Example:
+
+ways = take + nottake
+
+Initialization:
+
+0
+
+because impossible contributes 0 ways.
+
+Pattern C: Minimum / Maximum
+
+Keywords:
+
+Minimum
+Maximum
+Least
+Shortest
+Longest
+Optimal
+Best
+
+Examples:
+
+Minimum
+Coin Change
+Minimum Path Sum
+Matrix Chain Multiplication
+Jump Game II
+
+Recurrence:
+
+min(...)
+
+Initialization:
+
+inf
+Maximum
+Knapsack
+Rod Cutting
+Ones and Zeroes
+LIS
+
+Recurrence:
+
+max(...)
+
+Initialization:
+
+0
+
+or
+
+-inf
+Pattern D: Partition Problems
+
+Keywords:
+
+Split array
+Partition into two groups
+Difference
+Equal subset
+Target sum
+
+Examples:
+
+Target Sum
+Partition Equal Subset Sum
+Last Stone Weight II
+Minimum Subset Difference
+
+Almost always:
+
+Subset Sum DP
+
+comes hidden inside.
+
+Pattern E: Pick / Not Pick
+
+Keywords:
+
+Subset
+Choose elements
+Take or leave
+Knapsack
+
+State:
+
+f(ind, ...)
+
+Choices:
+
+take
+nottake
+
+Examples:
+
+Knapsack
+Coin Change
+Target Sum
+Subset Sum
+Ones and Zeroes
+
+If you see:
+
+For each element:
+use it
+or don't use it
+
+think:
+
+Take / Not Take DP
+Pattern F: Sequence Matching
+
+Keywords:
+
+String A
+String B
+Subsequence
+Common
+Edit
+Transform
+
+Examples:
+
+LCS
+Edit Distance
+Distinct Subsequences
+
+State:
+
+f(i,j)
+Pattern G: Jumping Problems
+
+Keywords:
+
+Jump
+Reach
+Steps
+Move forward
+
+Examples:
+
+Jump Game I
+Jump Game II
+
+Ask:
+
+Can reach?
+
+→ Boolean DP / Greedy
+
+Ask:
+
+Minimum jumps?
+
+→ Min DP / Greedy
+
+My Personal Decision Tree
+
+Whenever I see a problem, I literally ask:
+
+Question 1
+Am I counting?
+
+If yes:
+
+Count DP
+
+Use:
+
+take + nottake
+
+Examples:
+
+Target Sum
+Coin Change II
+Question 2
+Am I minimizing?
+
+If yes:
+
+Min DP
+
+Use:
+
+min(...)
+
+Initialize:
+
+inf
+
+Examples:
+
+Coin Change
+Jump Game II
+Question 3
+Am I maximizing?
+
+If yes:
+
+Max DP
+
+Use:
+
+max(...)
+
+Examples:
+
+Knapsack
+Ones and Zeroes
+Question 4
+Am I checking possibility?
+
+If yes:
+
+Boolean DP
+
+Use:
+
+take or nottake
+
+Examples:
+
+Jump Game I
+Subset Sum
+Example Analysis
+Coin Change
+
+Question:
+
+Minimum coins?
+
+Immediately:
+
+Min DP
+
+So:
+
+min(take,nottake)
+
+Impossible:
+
+inf
+Target Sum
+
+Question:
+
+How many expressions?
+
+Immediately:
+
+Count DP
+
+So:
+
+take+nottake
+
+Impossible:
+
+0
+Jump Game I
+
+Question:
+
+Can reach end?
+
+Immediately:
+
+Boolean DP
+
+So:
+
+take or nottake
+
+State:
+
+True/False
+Jump Game II
+
+Question:
+
+Minimum jumps?
+
+Immediately:
+
+Min DP
+
+So:
+
+min(...)
+
+Impossible:
+
+inf
+Ones and Zeroes
+
+Question:
+
+Largest subset size?
+
+Immediately:
+
+Max DP
+
+So:
+
+max(...)
+The Golden Formula
+
+Before writing any DP, answer these 3 questions:
+
+1. What is my state?
+2. What am I storing in that state?
+3. If a state is impossible, what should it contribute?
+
+Examples:
+
+Problem	State stores	Impossible value
+Coin Change	Min coins	inf
+Target Sum	#ways	0
+Jump Game I	Reachable?	False
+Knapsack	Max profit	0
+Ones and Zeroes	Max subset size	0

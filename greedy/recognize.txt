@@ -1,0 +1,7 @@
+How to Recognize The Greedy Pattern
+
+If you see:
+
+minimum jumps
+jump range
+reachable interval
