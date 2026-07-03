@@ -1,3 +1,10 @@
+A simple rule to remember
+
+Whenever converting memoization to tabulation:
+
+If recursion calls solve(ind + 1, ...), fill the table backwards and use dp[i + 1].
+If recursion calls solve(ind - 1, ...), fill the table forwards and use dp[i - 1].
+
 DP Pattern Recognition
 
 When you see:
