@@ -22,3 +22,4 @@ class Solution(object):
             left = not left
         
         return head
+    
