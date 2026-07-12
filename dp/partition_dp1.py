@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/minimum-cost-to-cut-a-stick/
+#https://leetcode.com/problems/minimum-cost-to-cut-a-stickko/
 class Solution(object):
     def minCost(self, n, cuts):
         """
